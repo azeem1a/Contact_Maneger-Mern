@@ -150,4 +150,4 @@ npx netlify deploy --prod --dir=dist
 
 
 
-**Built with ❤️ using MERN Stack**
+**Built with using MERN Stack**
