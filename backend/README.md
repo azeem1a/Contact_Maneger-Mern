@@ -65,55 +65,7 @@ http://localhost:5000/api
 | DELETE | `/contacts/:id` | Delete contact by ID |
 | GET | `/health` | Health check |
 
-### Request/Response Examples
 
-#### Create Contact (POST /api/contacts)
-**Request Body:**
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "phone": "1234567890",
-  "message": "Optional message"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "message": "Contact created successfully",
-  "data": {
-    "_id": "...",
-    "name": "John Doe",
-    "email": "john@example.com",
-    "phone": "1234567890",
-    "message": "Optional message",
-    "createdAt": "2024-01-01T00:00:00.000Z",
-    "updatedAt": "2024-01-01T00:00:00.000Z"
-  }
-}
-```
-
-#### Get All Contacts (GET /api/contacts)
-**Response:**
-```json
-{
-  "success": true,
-  "count": 2,
-  "data": [...]
-}
-```
-
-#### Delete Contact (DELETE /api/contacts/:id)
-**Response:**
-```json
-{
-  "success": true,
-  "message": "Contact deleted successfully",
-  "data": {}
-}
-```
 
 ## 📁 Project Structure
 
@@ -153,24 +105,6 @@ The API includes comprehensive error handling for:
 
 All errors return appropriate HTTP status codes and descriptive messages.
 
-## 🧪 Testing with Postman/cURL
-
-### Create Contact:
-```bash
-curl -X POST http://localhost:5000/api/contacts \
-  -H "Content-Type: application/json" \
-  -d '{"name":"John Doe","email":"john@example.com","phone":"1234567890"}'
-```
-
-### Get All Contacts:
-```bash
-curl http://localhost:5000/api/contacts
-```
-
-### Delete Contact:
-```bash
-curl -X DELETE http://localhost:5000/api/contacts/CONTACT_ID
-```
 
 ## 📝 Notes
 
@@ -183,6 +117,3 @@ curl -X DELETE http://localhost:5000/api/contacts/CONTACT_ID
 
 The backend is designed to work seamlessly with the React frontend located in the `../frontend` directory. Make sure both servers are running for full functionality.
 
-## 📄 License
-
-ISC
