@@ -78,12 +78,6 @@ PORT=5000
 NODE_ENV=development
 ```
 
-**To get your MongoDB URI:**
-1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a free cluster
-3. Click "Connect" → "Connect your application"
-4. Copy the connection string
-5. Replace `<password>` with your database password
 
 **Start the backend server:**
 ```bash
@@ -130,47 +124,15 @@ Frontend will run on `http://localhost:5173` (or the port shown in terminal)
 | POST   | `/api/contacts` | Create new contact |
 | DELETE | `/api/contacts/:id` | Delete a contact |
 
-### Example API Request (POST)
-```bash
-curl -X POST http://localhost:5000/api/contacts \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "John Doe",
-    "email": "john@example.com",
-    "phone": "1234567890",
-    "message": "Hello!"
-  }'
-```
+
 
 ## 🚀 Deployment
 
-### Backend Deployment (Render/Railway/Cyclic)
+### Backend Deployment (Render)
 
-**For Render:**
-1. Push your code to GitHub
-2. Create new Web Service on Render
-3. Connect your repository
-4. Set build command: `cd backend && npm install`
-5. Set start command: `cd backend && npm start`
-6. Add environment variables: `MONGO_URI`, `PORT`, `NODE_ENV=production`
 
-**For Railway:**
-1. Push to GitHub
-2. Create new project on Railway
-3. Add MongoDB plugin OR use MongoDB Atlas
-4. Set root directory to `backend`
-5. Add environment variables
+### Frontend Deployment (Vercel)
 
-### Frontend Deployment (Vercel/Netlify)
-
-**For Vercel:**
-```bash
-cd frontend
-npm run build
-npx vercel --prod
-```
-
-Or connect your GitHub repo to Vercel dashboard.
 
 **Environment Variable for Frontend:**
 - Create `.env` in frontend:
@@ -185,52 +147,7 @@ npm run build
 npx netlify deploy --prod --dir=dist
 ```
 
-## ✅ Functionality Checklist
 
-- [x] Contact Form with validation
-- [x] Required fields (Name, Email, Phone)
-- [x] Optional message field
-- [x] Email format validation
-- [x] Disabled submit button when invalid
-- [x] Success/Error messages
-- [x] MongoDB integration
-- [x] RESTful API with proper error handling
-- [x] Display contacts in table
-- [x] Auto-refresh on add
-- [x] Delete functionality
-- [x] Responsive design
-- [x] Clean code with comments
-- [x] MVC architecture
-- [x] Production-ready
 
-## 🐛 Troubleshooting
 
-**MongoDB Connection Error:**
-- Verify your `MONGO_URI` in `.env`
-- Check MongoDB Atlas IP whitelist (allow all: `0.0.0.0/0`)
-- Ensure database user has correct permissions
-
-**CORS Error:**
-- Backend has CORS enabled by default
-- If deploying, ensure frontend `.env` has correct API URL
-
-**Port Already in Use:**
-- Change `PORT` in backend `.env`
-- Frontend port can be changed in `vite.config.js`
-
-## 👨‍💻 Development Notes
-
-- Backend uses MVC architecture
-- All API responses follow consistent format
-- Input validation on both frontend and backend
-- Mongoose schema validation
-- Clean, readable code with comments
-- No console errors or warnings
-
-## 📝 License
-
-This project is open source and available for educational purposes.
-
----
-
-**Built with ❤️ using MERN Stack**
+**Built with using MERN Stack**
